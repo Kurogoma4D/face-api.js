@@ -134,6 +134,8 @@
       updateTimeStats(Date.now() - ts)
 
       if (result) {
+        /// 0.7あたりがしきい値かもしれん
+        console.log(result.relativeBox.width);
         const canvas = $('#overlay').get(0)
         const dims = faceapi.matchDimensions(canvas, videoEl, true)
         faceapi.draw.drawDetections(canvas, faceapi.resizeResults(result, dims))
